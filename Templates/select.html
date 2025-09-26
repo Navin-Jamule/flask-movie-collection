@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Movie{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="heading">Select Movie to Edit</h1>
+  <p class="description">Click on a movie to update its rating or review</p>
+
+  {% for movie in movies %}
+    <p>
+      <a href="{{ url_for('update', movie_id=movie.id) }}">
+        {{ movie.title }} - ({{ movie.year }})
+      </a>
+    </p>
+  {% endfor %}
+</div>
+{% endblock %}

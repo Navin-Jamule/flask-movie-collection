@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Add Movie{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1 class="heading">Add a Movie</h1>
+  <p class="description">Fill the details below to add a new movie</p>
+
+  <form method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Movie Title</label>
+      <input type="text" class="form-control" name="title" id="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="year" class="form-label">Release Year</label>
+      <input type="number" class="form-control" name="year" id="year" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input type="number" step="0.1" class="form-control" name="rating" id="rating" required>
+    </div>
+    <div class="mb-3">
+      <label for="ranking" class="form-label">Ranking</label>
+      <input type="number" class="form-control" name="ranking" id="ranking" required>
+    </div>
+    <div class="mb-3">
+      <label for="review" class="form-label">Review</label>
+      <input type="text" class="form-control" name="review" id="review" required>
+    </div>
+    <div class="mb-3">
+      <label for="img_url" class="form-label">Image URL</label>
+      <input type="url" class="form-control" name="img_url" id="img_url">
+    </div>
+
+    <button type="submit" class="button">Add Movie</button>
+  </form>
+</div>
+{% endblock %}
